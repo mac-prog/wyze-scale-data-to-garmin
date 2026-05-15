@@ -1,0 +1,26 @@
+﻿# Secrets
+.env
+*.env
+
+# Personal Wyze and Garmin data
+raw/
+clean/
+analysis/
+garmin/
+output/
+wyze_scale_cache/
+*.json
+*.xlsx
+*.csv
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
