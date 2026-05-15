@@ -129,9 +129,71 @@ output\garmin
 or in your custom `WYZE_OUTPUT_DIR\garmin` folder if you set `WYZE_OUTPUT_DIR`.
 
 Do not commit generated output files to GitHub. These files may contain personal health data, timestamps, account data, user IDs, or device IDs.
+
 ## Setup
 
 Create a virtual environment:
 
 ```powershell
 python -m venv .venv
+```
+
+Activate the virtual environment:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Install the required Python packages:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Copy the example environment file:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Open `.env` and add your own Wyze credentials:
+
+```powershell
+notepad .env
+```
+
+## Run the workflow
+
+From PowerShell, run:
+
+```powershell
+.\refresh_wyze_scale_full.ps1
+```
+
+When the workflow finishes, use the latest timestamped Garmin CSV from:
+
+```text
+output\garmin
+```
+
+or from your custom `WYZE_OUTPUT_DIR\garmin` folder.
+
+## Garmin Connect import settings
+
+Use these settings in Garmin Connect:
+
+```text
+Language: English
+Length Units: Feet, Yards, Miles
+Weight Units: Pounds
+Date Format: 31-12-2026
+Number Format: 1,234.56
+```
+
+## Notes
+
+Close Excel before running the refresh script.
+
+If your Wyze password changes, update your local `.env` file and rerun the workflow.
+
+Old Garmin test CSV files can be deleted manually.
