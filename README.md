@@ -60,7 +60,75 @@ Create your `.env` file by copying the example file:
 
 ```powershell
 Copy-Item .env.example .env
+```
+Then open `.env`:
 
+```powershell
+notepad .env
+```
+
+Fill in your own Wyze credentials and Wyze API credentials:
+
+```env
+WYZE_EMAIL=your_email@example.com
+WYZE_PASSWORD=your_wyze_password
+WYZE_KEY_ID=your_wyze_key_id
+WYZE_API_KEY=your_wyze_api_key
+```
+
+Your `.env` file stays on your own computer. Do not upload it to GitHub. Do not share it with anyone.
+
+## Output folder
+
+By default, generated files are saved inside this project folder under:
+
+```text
+.\output
+```
+
+You can choose a different output folder by setting `WYZE_OUTPUT_DIR` in your `.env` file.
+
+Example:
+
+```env
+WYZE_OUTPUT_DIR=C:\Users\YourName\Documents\Wyze Scale Output
+```
+
+If `WYZE_OUTPUT_DIR` is blank, the workflow uses:
+
+```text
+.\output
+```
+
+## Working files and final outputs
+
+The workflow creates local working files and final output files.
+
+Local working files may include:
+
+```text
+raw\
+clean\
+wyze_scale_cache\
+```
+
+Final output folders may include:
+
+```text
+output\clean
+output\analysis
+output\garmin
+```
+
+The Garmin import CSV is created in:
+
+```text
+output\garmin
+```
+
+or in your custom `WYZE_OUTPUT_DIR\garmin` folder if you set `WYZE_OUTPUT_DIR`.
+
+Do not commit generated output files to GitHub. These files may contain personal health data, timestamps, account data, user IDs, or device IDs.
 ## Setup
 
 Create a virtual environment:
