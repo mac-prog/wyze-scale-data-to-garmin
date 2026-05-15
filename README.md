@@ -52,6 +52,15 @@ Use this tool only with your own account and your own data.
 - Wyze API key credentials
 - Garmin Connect account
 
+## Configuration
+
+This project uses a local `.env` file for configuration.
+
+Create your `.env` file by copying the example file:
+
+```powershell
+Copy-Item .env.example .env
+
 ## Setup
 
 Create a virtual environment:
